@@ -1,9 +1,9 @@
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
+1. How many bytes are the invalid write? 1
+2. Which function caused the invalid write? copy_str
+3. Which function called the answer to question 2? main
+4. Which file did the call occur in? ex5_valgrind.c
+5. Which line did the call occur on? 6
+6. How many bytes were actually allocated? 12
+7. How many bytes should have been allocated? 13
+8. Are there any memory leaks? Yes
+9. How many bytes were leaked? 12
