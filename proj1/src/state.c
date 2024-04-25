@@ -23,20 +23,20 @@ static void update_head(game_state_t* state, unsigned int snum);
 
 /* Task 1 */
 game_state_t* create_default_state() {
-  // TODO: Implement this function.
-  return NULL;
+    // TODO: Implement this function.
+    return NULL;
 }
 
 /* Task 2 */
 void free_state(game_state_t* state) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /* Task 3 */
 void print_board(game_state_t* state, FILE* fp) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /*
@@ -44,9 +44,9 @@ void print_board(game_state_t* state, FILE* fp) {
   (already implemented for you).
 */
 void save_board(game_state_t* state, char* filename) {
-  FILE* f = fopen(filename, "w");
-  print_board(state, f);
-  fclose(f);
+    FILE* f = fopen(filename, "w");
+    print_board(state, f);
+    fclose(f);
 }
 
 /* Task 4.1 */
@@ -56,7 +56,7 @@ void save_board(game_state_t* state, char* filename) {
   (already implemented for you).
 */
 char get_board_at(game_state_t* state, unsigned int row, unsigned int col) {
-  return state->board[row][col];
+    return state->board[row][col];
 }
 
 /*
@@ -64,7 +64,7 @@ char get_board_at(game_state_t* state, unsigned int row, unsigned int col) {
   (already implemented for you).
 */
 static void set_board_at(game_state_t* state, unsigned int row, unsigned int col, char ch) {
-  state->board[row][col] = ch;
+    state->board[row][col] = ch;
 }
 
 /*
@@ -73,8 +73,8 @@ static void set_board_at(game_state_t* state, unsigned int row, unsigned int col
   Returns false otherwise.
 */
 static bool is_tail(char c) {
-  // TODO: Implement this function.
-  return true;
+    // TODO: Implement this function.
+    return true;
 }
 
 /*
@@ -83,8 +83,8 @@ static bool is_tail(char c) {
   Returns false otherwise.
 */
 static bool is_head(char c) {
-  // TODO: Implement this function.
-  return true;
+    // TODO: Implement this function.
+    return true;
 }
 
 /*
@@ -92,8 +92,8 @@ static bool is_head(char c) {
   The snake consists of these characters: "wasd^<v>WASDx"
 */
 static bool is_snake(char c) {
-  // TODO: Implement this function.
-  return true;
+    // TODO: Implement this function.
+    return true;
 }
 
 /*
@@ -102,8 +102,8 @@ static bool is_snake(char c) {
   tail ("wasd").
 */
 static char body_to_tail(char c) {
-  // TODO: Implement this function.
-  return '?';
+    // TODO: Implement this function.
+    return '?';
 }
 
 /*
@@ -112,8 +112,8 @@ static char body_to_tail(char c) {
   body ("^<v>").
 */
 static char head_to_body(char c) {
-  // TODO: Implement this function.
-  return '?';
+    // TODO: Implement this function.
+    return '?';
 }
 
 /*
@@ -122,8 +122,8 @@ static char head_to_body(char c) {
   Returns cur_row otherwise.
 */
 static unsigned int get_next_row(unsigned int cur_row, char c) {
-  // TODO: Implement this function.
-  return cur_row;
+    // TODO: Implement this function.
+    return cur_row;
 }
 
 /*
@@ -132,8 +132,8 @@ static unsigned int get_next_row(unsigned int cur_row, char c) {
   Returns cur_col otherwise.
 */
 static unsigned int get_next_col(unsigned int cur_col, char c) {
-  // TODO: Implement this function.
-  return cur_col;
+    // TODO: Implement this function.
+    return cur_col;
 }
 
 /*
@@ -144,8 +144,8 @@ static unsigned int get_next_col(unsigned int cur_col, char c) {
   This function should not modify anything.
 */
 static char next_square(game_state_t* state, unsigned int snum) {
-  // TODO: Implement this function.
-  return '?';
+    // TODO: Implement this function.
+    return '?';
 }
 
 /*
@@ -160,8 +160,8 @@ static char next_square(game_state_t* state, unsigned int snum) {
   Note that this function ignores food, walls, and snake bodies when moving the head.
 */
 static void update_head(game_state_t* state, unsigned int snum) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /*
@@ -175,20 +175,20 @@ static void update_head(game_state_t* state, unsigned int snum) {
   ...in the snake struct: update the row and col of the tail
 */
 static void update_tail(game_state_t* state, unsigned int snum) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /* Task 4.5 */
 void update_state(game_state_t* state, int (*add_food)(game_state_t* state)) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /* Task 5 */
 game_state_t* load_board(FILE* fp) {
-  // TODO: Implement this function.
-  return NULL;
+    // TODO: Implement this function.
+    return NULL;
 }
 
 /*
@@ -200,12 +200,12 @@ game_state_t* load_board(FILE* fp) {
   fill in the head row and col in the struct.
 */
 static void find_head(game_state_t* state, unsigned int snum) {
-  // TODO: Implement this function.
-  return;
+    // TODO: Implement this function.
+    return;
 }
 
 /* Task 6.2 */
 game_state_t* initialize_snakes(game_state_t* state) {
-  // TODO: Implement this function.
-  return NULL;
+    // TODO: Implement this function.
+    return NULL;
 }
