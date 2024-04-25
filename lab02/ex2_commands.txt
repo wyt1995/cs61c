@@ -3,3 +3,20 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+
+break test_pwd_checker.c:main
+run
+next
+until 11
+step
+step
+print password
+finish
+next
+step
+until 25
+print meets_len_req
+print length
+quit
+
+# LLDB reference: https://lldb.llvm.org/use/map.html

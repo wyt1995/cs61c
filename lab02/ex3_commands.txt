@@ -3,3 +3,16 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+
+break pwd_checker.c:86
+run
+step
+next
+step
+break 31 if letter == '0'  # lldb: breakpoint set -l 31 -c "letter == '0'"
+continue
+print letter
+print is_in_range  # false
+print lower  # '\0'
+print upper  # '\t'
+quit
