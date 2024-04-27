@@ -33,7 +33,7 @@ game_state_t* create_default_state() {
     game_state->board = (char **) malloc(DEFAULT_ROW_NUM * sizeof(char *));
     game_state->snakes = (snake_t *) malloc(sizeof(snake_t));
 
-    // initial board state
+    // initialize board state
     for (int i = 0; i < DEFAULT_ROW_NUM; i++) {
         game_state->board[i] = (char *) malloc((DEFAULT_COL_NUM + 1) * sizeof(char));
         game_state->board[i][0] = '#';
@@ -53,11 +53,11 @@ game_state_t* create_default_state() {
     game_state->board[2][9] = '*';
 
     // snake struct
-    game_state->snakes->tail_row = 2;
-    game_state->snakes->tail_col = 2;
-    game_state->snakes->head_row = 2;
-    game_state->snakes->head_col = 4;
-    game_state->snakes->live = true;
+    game_state->snakes[0].tail_row = 2;
+    game_state->snakes[0].tail_col = 2;
+    game_state->snakes[0].head_row = 2;
+    game_state->snakes[0].head_col = 4;
+    game_state->snakes[0].live = true;
 
     return game_state;
 }
@@ -319,7 +319,7 @@ game_state_t* load_board(FILE* fp) {
     state->snakes = NULL;
 
     // read from file
-    char line[1000];
+    char line[150000];
     while (fgets(line, sizeof(line), fp)) {
         size_t len = strlen(line);
         unsigned int idx = state->num_rows;
