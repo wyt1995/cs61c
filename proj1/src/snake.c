@@ -39,13 +39,10 @@ int main(int argc, char* argv[]) {
     // Do not modify anything above this line.
 
     /* Task 7 */
-
     // Read board from file, or create default board
     if (in_filename != NULL) {
-        // Load the board from in_filename
+        // Load the board from in_filename; if the file doesn't exist, return -1
         FILE* fp = fopen(in_filename, "r");
-        
-        // If the file doesn't exist, return -1
         if (fp == NULL) {
             return -1;
         }
@@ -63,7 +60,7 @@ int main(int argc, char* argv[]) {
         state = create_default_state();
     }
 
-    // Update state. Use the deterministic_food function (already implemented in snake_utils.h) to add food.
+    // Update state. Use the deterministic_food function (implemented in snake_utils.h) to add food.
     update_state(state, deterministic_food);
 
     // Write updated board to file or stdout
