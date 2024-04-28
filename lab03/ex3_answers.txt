@@ -1,8 +1,8 @@
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+1. What address did the program try to access, but caused the error? 0x10008080
+2. How many bytes was the program trying to access? 4
+3. What address did the program try to access, but caused the error? 0x10008080
+4. How many bytes were allocated in the block related to the error? 40
+5. Which line of the source file caused this error? 18
+6. What is the value of t1 based on the memcheck error message? 11
+7. How many bytes were not freed when the program exited? 40
+8. What is the address of the block that was not freed? 0x10008058

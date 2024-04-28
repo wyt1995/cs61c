@@ -1,11 +1,11 @@
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
-11. 
+1. What is the machine code of the highlighted instruction? 0x000002B3
+2. What is the machine code of the instruction at address 0x34? 0x00000073
+3. What is the value of the sp (stack pointer) register? 0x7FFFFFDC
+4. What is the new value of the t1 register? 0x00000001
+5. What is the machine code of the current instruction? 0x10000E17
+6. What is the value of the t3 register? 0x10000000
+7. What is the byte that t3 points to? 0x0C
+8. What is the value of the t0 register? 0x00000001
+9. What is the new value of the t0 register? 0x0000000D
+10. What is the value of the t0 register in decimal? 13
+11. What is the output of the program? 144

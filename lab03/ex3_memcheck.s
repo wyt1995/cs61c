@@ -14,16 +14,22 @@ main:
     li t2 10 # t2 is the size of the array
 
 loop:
+    # Check if we are done
+    bge t1 t2 finish
     # Store 0 at the current index
     sw x0 0(t0)
     # Increment the index
     addi t1 t1 1
     # Increment the pointer
     addi t0 t0 4
-    # Check if we are done
-    # If not, loop
-    bge t2 t1 loop
+    # Loop
+    j loop
 
+finish:
+    # Reset pointer to the beginning of the array and free memory
+    addi t0 t0 -40
+    mv a0 t0
+    jal free
     # Exit the program
     li a0 0
     jal exit
