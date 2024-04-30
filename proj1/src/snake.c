@@ -41,8 +41,10 @@ int main(int argc, char* argv[]) {
     /* Task 7 */
     // Read board from file, or create default board
     if (in_filename != NULL) {
-        // Load the board from in_filename; if the file doesn't exist, return -1
+        // Load the board from in_filename
         FILE* fp = fopen(in_filename, "r");
+
+        // If the file doesn't exist, return -1
         if (fp == NULL) {
             return -1;
         }
