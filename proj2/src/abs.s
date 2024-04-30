@@ -9,10 +9,12 @@
 #   a0 (int) the absolute value of the input
 # =================================================================
 abs:
-    # Prologue
-
-    # PASTE HERE
-
+    # branch if non-negative
+    bge a0, x0, done
+    
+    # Negate a0
+    sub a0, x0, a0
+    
     # Epilogue
-
-    jr ra
+done:
+    ret
