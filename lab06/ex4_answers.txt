@@ -1,2 +1,2 @@
-1. 
-2. 
+1. What is the critical path of this pipelined circuit in ns? 10(CLK-to-Q) + 60(max(mul, add)) + 10(setup) = 80 ns
+2. What is the maximum clock rate for this pipelined circuit in MHz? 1/80 = 12.5 MHz

@@ -1,1 +1,1 @@
-1. 
+1. What is the length of the critical path of this circuit in ns? 10(CLK-to-Q) + 60(mul) + 45(add) + 10(setup) = 125 ns
