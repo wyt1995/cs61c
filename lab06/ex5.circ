@@ -241,10 +241,10 @@
       <a name="label" val="bits_ten"/>
       <a name="width" val="2"/>
     </comp>
-    <comp lib="0" loc="(540,300)" name="Constant">
+    <comp lib="0" loc="(540,300)" name="Constant"/>
+    <comp lib="0" loc="(540,370)" name="Constant">
       <a name="value" val="0x0"/>
     </comp>
-    <comp lib="0" loc="(540,370)" name="Constant"/>
     <comp lib="0" loc="(540,450)" name="Constant">
       <a name="value" val="0x0"/>
       <a name="width" val="32"/>
@@ -292,7 +292,7 @@
       <a name="width" val="28"/>
     </comp>
     <comp lib="0" loc="(550,660)" name="Constant">
-      <a name="value" val="0x7"/>
+      <a name="value" val="0x5"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(550,740)" name="Constant">
