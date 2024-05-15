@@ -4,11 +4,11 @@
 #    understand how the cache parameters affect cache performance.
 #
 # PSEUDOCODE:
-#    int array[];  //Assume sizeof(int) == 4
+#    int array[];  // Assume sizeof(int) == 4
 #    for (k = 0; k < repcount; k++) {		// repeat repcount times
 #      /* Step through the selected array segment with the given step size. */
 #      for (index = 0; index < arraysize; index += stepsize) {
-#        if(option==0)
+#        if (option == 0)
 #          array[index] = 0;			// Option 0: One cache access - write
 #        else
 #          array[index] = array[index] + 1;	// Option 1: Two cache accesses - read AND write
@@ -31,7 +31,7 @@ main:	li	a0, 256		# array size in BYTES (power of 2 < array size)
 	jal	accessWords	# lw/sw
 	#jal	accessBytes	# lb/sb
 
-	li	a0,10		# exit
+	li	a0, 10		# exit
 	ecall
 
 # SUMMARY OF REGISTER USE:
@@ -45,17 +45,18 @@ main:	li	a0, 256		# array size in BYTES (power of 2 < array size)
 accessWords:
 	la	s0, array		# ptr to array
 	add	s1, s0, a0		# hardcode array limit (ptr)
-	slli	t1, a1, 2		# multiply stepsize by 4 because WORDS
+	slli t1, a1, 2		# multiply stepsize by 4 because WORDS
+	
 wordLoop:
-	beq	a3, zero,  wordZero
+	beq	a3, zero, wordZero
 
 	lw	t0, 0(s0)		# array[index/4]++
-	addi	t0, t0, 1
+	addi t0, t0, 1
 	sw	t0, 0(s0)
 	j	wordCheck
 
 wordZero:
-	sw	zero,  0(s0)		# array[index/4] = 0
+	sw	zero, 0(s0)		# array[index/4] = 0
 
 wordCheck:
 	add	s0, s0, t1		# increment ptr

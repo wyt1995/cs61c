@@ -1,24 +1,25 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1. Hit rate is 0 because step size (a1) in bytes is exactly equal to block size.
+    2. 0%
+    3. Change step size to 1 will increase hit rate to 50%.
 
 Scenario 2
-    1.
-    2.
-    3.
+    1. There are 2 memory accesses per iteration of the inner loop.
+    2. Hit/Miss pattern: MHHH.
+    3. Hit rate goes closer to 100%.
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1. L1 50%, L2 0%, Overall 50%.
+    2. 32 of L1 accesses, 16 of L1 misses.
+    3. 16 of L2 accesses. L2 is accessed only if L1 misses.
+    4. Increase rep counts.
+    5. (1) L1 hit rate stays the same, (2) L2 hit rate stays the same, as we increase the number of blocks in L1;
+       (3) L1 hit rate increases, (4) L2 hit rate stays the same, as we increase the L1 block size.
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
-Checkoff Question 4:
-Checkoff Question 5:
+Checkoff Question 1: Hit rate is still 0 because with step size to be 8, all accessed elements are mapped to the first block of cache. Rep count has no impact on hit rate.
+Checkoff Question 2: Step size and option.
+Checkoff Question 3: Hit rate is 75%.
+Checkoff Question 4: Cache size is exactly equal to array size. After one iteration of the outer loop, all elements are cached and no more cache miss will happen.
+Checkoff Question 5: As we iterate over the same array, replaced block in L1 due to capacity restriction can be accessed in L2 cache.
