@@ -1,19 +1,22 @@
 Exercise 1:
-    1.
-    2.
-    3.
+    1. 32 words.
+    2. 4 TLB hits, 6 TLB misses; 0 page hits, 6 page faults.
+    3. No, No. The size of TLB is equal to the page frame of physical memory. Once a page is evicted from memory, the corresponding entry in the page table will be set to invalid at the same time.
 
 Exercise 2:
-    1.
+    1. 00, 20, 40, 60, 80, A0, C0, E0, 00, 20. Each address increments the previous one by 20, or 32 words, the exact same size as the page frame.
 
 Exercise 3:
-    1.
+    1. Physical memory size.
 
 --- lines below are ignored by the AG ---
 
 Exercise 1 Checkoff Questions:
-    1.
-    2.
+    1. Suppose we are trying to access data at virtual address 18 in hexadecimal, that is 0001,1000 in binary. Since each page has 32 words, the virtual address will be divided into page 000 and offset 11000.
+       We start memory access by searching the TLB. Since a matching entry was not found for the virtual page number 0, there is a TLB miss. We proceed by looking up the page table at entry 0, resulting in a page fault.
+       The page will be brought from disk to memory into frame 0. The physical address of the requested word is 001,1000, or 24 in decimal. It is comprised of physical memory frame 00 and virtual memory offset 11000.
+       Finally, we update the page table by setting the valid bit of page frame 0 to 1, and cache the page in the TLB. This completes an access cycle.
+    2. Physical address only have 2 bits for the PPN because it has only 4 pages, while the virtual memory page table has 8 entries that can be represented using 3 bits.
 
 Exercise 4 Checkoff Question:
-    1.
+    1. There are four processes running at the same time. The OS flushes the TLB whenever it performs a context switch.
