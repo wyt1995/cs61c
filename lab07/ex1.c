@@ -56,6 +56,7 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
 
     for (unsigned int w = 0; w < OUTER_ITERATIONS; w++) {
         __m128i sum_vect = _mm_setzero_si128();
+        
         unsigned int i = 0;
         for (; i < NUM_ELEMS / 4 * 4; i += 4) {
             __m128i temp = _mm_loadu_si128((__m128i *) (vals + i));
@@ -94,6 +95,7 @@ long long int sum_simd_unrolled(int vals[NUM_ELEMS]) {
     for (unsigned int w = 0; w < OUTER_ITERATIONS; w++) {
         /* Copy your sum_simd() implementation here, and unroll it */
         __m128i sum_vect = _mm_setzero_si128();
+        
         unsigned int i = 0;
         for (; i < NUM_ELEMS / 16 * 16; i += 16) {
             __m128i temp = _mm_loadu_si128((__m128i *) (vals + i));
