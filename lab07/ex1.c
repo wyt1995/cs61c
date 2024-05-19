@@ -60,22 +60,22 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
         for (; i < NUM_ELEMS / 16 * 16; i += 16) {
             __m128i temp = _mm_loadu_si128((__m128i *) (vals + i));
             __m128i comp = _mm_cmpgt_epi32(temp, _127);
-            temp = _mm_and_epi32(temp, comp);
+            temp = _mm_and_si128(temp, comp);
             sum_vect = _mm_add_epi32(sum_vect, temp);
 
             temp = _mm_loadu_si128((__m128i *) (vals + i + 4));
             comp = _mm_cmpgt_epi32(temp, _127);
-            temp = _mm_and_epi32(temp, comp);
+            temp = _mm_and_si128(temp, comp);
             sum_vect = _mm_add_epi32(sum_vect, temp);
 
             temp = _mm_loadu_si128((__m128i *) (vals + i + 8));
             comp = _mm_cmpgt_epi32(temp, _127);
-            temp = _mm_and_epi32(temp, comp);
+            temp = _mm_and_si128(temp, comp);
             sum_vect = _mm_add_epi32(sum_vect, temp);
 
             temp = _mm_loadu_si128((__m128i *) (vals + i + 12));
             comp = _mm_cmpgt_epi32(temp, _127);
-            temp = _mm_and_epi32(temp, comp);
+            temp = _mm_and_si128(temp, comp);
             sum_vect = _mm_add_epi32(sum_vect, temp);
         }
 
@@ -113,7 +113,7 @@ long long int sum_simd_unrolled(int vals[NUM_ELEMS]) {
         for (; i < NUM_ELEMS / 4 * 4; i += 4) {
             __m128i temp = _mm_loadu_si128((__m128i *) (vals + i));
             __m128i comp = _mm_cmpgt_epi32(temp, _127);
-            temp = _mm_and_epi32(temp, comp);
+            temp = _mm_and_si128(temp, comp);
             sum_vect = _mm_add_epi32(sum_vect, temp);
         }
 
