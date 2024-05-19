@@ -64,7 +64,7 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
             sum_vect = _mm_add_epi32(sum_vect, temp);
         }
 
-        long long int tmp_arr[4];
+        int tmp_arr[4];
         _mm_storeu_si128((__m128i *) tmp_arr, sum_vect);
         for (int j = 0; j < 4; j++) {
             result += tmp_arr[j];
@@ -117,7 +117,7 @@ long long int sum_simd_unrolled(int vals[NUM_ELEMS]) {
             sum_vect = _mm_add_epi32(sum_vect, temp);
         }
 
-        long long int tmp_arr[4];
+        int tmp_arr[4];
         _mm_storeu_si128((__m128i *) tmp_arr, sum_vect);
         for (int j = 0; j < 4; j++) {
             result += tmp_arr[j];
