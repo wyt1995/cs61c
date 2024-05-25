@@ -1,4 +1,4 @@
-CC=gcc
+CC=gcc-14
 CFLAGS_OMP=-std=gnu99 -fopenmp -c -g
 LDFLAGS_OMP=-fopenmp
 

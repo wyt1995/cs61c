@@ -1,4 +1,3 @@
-
 #ifndef EX1_H
 #define EX1_H
 
@@ -14,6 +13,7 @@
 #define ARRAY_SIZE 5000000
 
 void v_add_naive(double* x, double* y, double* z);
+void v_add_optimized_for(double* x, double* y, double* z);
 void v_add_optimized_adjacent(double* x, double* y, double* z);
 void v_add_optimized_chunks(double* x, double* y, double* z);
 #endif
